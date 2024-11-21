@@ -1,0 +1,6 @@
+﻿services:
+  occasia.api:
+    image: occasia.api
+    build:
+      context: .
+      dockerfile: src/API/Occasia.Api/Dockerfile

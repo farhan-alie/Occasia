@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <ItemGroup>
+        <ProjectReference Include="..\Occasia.Modules.Events.Application\Occasia.Modules.Events.Application.csproj"/>
+    </ItemGroup>
+</Project>
