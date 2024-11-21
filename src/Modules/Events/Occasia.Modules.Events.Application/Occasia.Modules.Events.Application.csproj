@@ -4,7 +4,4 @@
         <ProjectReference Include="..\..\..\Common\Occasia.Common.Domain\Occasia.Common.Domain.csproj"/>
         <ProjectReference Include="..\Occasia.Modules.Events.Domain\Occasia.Modules.Events.Domain.csproj"/>
     </ItemGroup>
-    <ItemGroup>
-        <Folder Include="Events\"/>
-    </ItemGroup>
 </Project>

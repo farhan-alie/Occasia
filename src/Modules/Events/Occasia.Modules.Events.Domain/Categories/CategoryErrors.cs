@@ -8,7 +8,7 @@ public static class CategoryErrors
         "Categories.AlreadyArchived",
         "The category was already archived");
 
-    public static Error NotFound(Guid categoryId)
+    public static Error NotFound(CategoryId categoryId)
     {
         return Error.NotFound("Categories.NotFound", $"The category with the identifier {categoryId} was not found");
     }

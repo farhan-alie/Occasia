@@ -14,7 +14,7 @@ public static class CreateCategory
     {
         public Validator()
         {
-            _ = RuleFor(x => x.Name).NotEmpty();
+            RuleFor(x => x.Name).NotEmpty();
         }
     }
 
