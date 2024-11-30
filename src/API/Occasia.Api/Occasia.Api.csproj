@@ -5,9 +5,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\..\..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Common\Occasia.Common.Application\Occasia.Common.Application.csproj"/>
+        <ProjectReference Include="..\..\Common\Occasia.Common.Domain\Occasia.Common.Domain.csproj"/>
+        <ProjectReference Include="..\..\Common\Occasia.Common.Infastructure\Occasia.Common.Infastructure.csproj"/>
+        <ProjectReference Include="..\..\Modules\Events\Occasia.Modules.Events.Presentation\Occasia.Modules.Events.Presentation.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.3"/>
+        <PackageReference Include="Serilog.Sinks.Seq" Version="8.0.0"/>
     </ItemGroup>
 
 </Project>

@@ -1,10 +1,12 @@
-﻿namespace Occasia.Modules.Events.Domain.TicketTypes;
+﻿using Occasia.Modules.Events.Domain.Events;
+
+namespace Occasia.Modules.Events.Domain.TicketTypes;
 
 public interface ITicketTypeRepository
 {
-    Task<TicketType?> GetAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<TicketType?> GetAsync(TicketTypeId id, CancellationToken cancellationToken = default);
 
-    Task<bool> ExistsAsync(Guid eventId, CancellationToken cancellationToken = default);
+    Task<bool> ExistsAsync(EventId eventId, CancellationToken cancellationToken = default);
 
     void Insert(TicketType ticketType);
 }

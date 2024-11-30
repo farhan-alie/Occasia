@@ -17,7 +17,7 @@ public static class DependencyInjection
         NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
         services.TryAddSingleton(npgsqlDataSource);
 
-        _ = services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+        services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
         services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
 
