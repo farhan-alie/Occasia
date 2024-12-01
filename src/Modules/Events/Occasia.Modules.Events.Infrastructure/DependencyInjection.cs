@@ -25,7 +25,6 @@ public static class DependencyInjection
                     databaseConnectionString,
                     npgsqlOptions => npgsqlOptions
                         .MigrationsHistoryTable(HistoryRepository.DefaultTableName, Schemas.Events))
-                .UseSnakeCaseNamingConvention()
                 .AddInterceptors());
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<EventsDbContext>());

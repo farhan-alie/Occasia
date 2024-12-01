@@ -1,3 +1,5 @@
-﻿namespace Occasia.Modules.Events.Application.Categories;
+﻿using Occasia.Modules.Events.Domain.Categories;
 
-public sealed record CategoryResponse(Guid Id, string Name, bool IsArchived);
+namespace Occasia.Modules.Events.Application.Categories;
+
+public sealed record CategoryResponse(CategoryId Id, string Name, bool IsArchived);

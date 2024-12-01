@@ -1,8 +1,6 @@
-﻿using System.Data.Common;
-using Dapper;
-using ErrorOr;
-using Occasia.Common.Application.Data;
+﻿using ErrorOr;
 using Occasia.Common.Application.Messaging;
+using Occasia.Modules.Events.Domain.Categories;
 
 namespace Occasia.Modules.Events.Application.Categories;
 
@@ -11,26 +9,16 @@ public static class GetCategories
     public sealed record Query : IQuery<ErrorOr<IReadOnlyList<CategoryResponse>>>;
 
 
-    internal sealed class Handler(IDbConnectionFactory dbConnectionFactory)
+    internal sealed class Handler(ICategoryRepository categoryRepository)
         : IQueryHandler<Query, ErrorOr<IReadOnlyList<CategoryResponse>>>
     {
         public async Task<ErrorOr<IReadOnlyList<CategoryResponse>>> Handle(Query request,
             CancellationToken cancellationToken)
         {
-            await using DbConnection connection = await dbConnectionFactory.OpenConnectionAsync().ConfigureAwait(false);
+            IReadOnlyCollection<Category> categories =
+                await categoryRepository.ListAsync(cancellationToken).ConfigureAwait(false);
 
-            const string sql =
-                $"""
-                 SELECT
-                     id AS {nameof(CategoryResponse.Id)},
-                     name AS {nameof(CategoryResponse.Name)},
-                     is_archived AS {nameof(CategoryResponse.IsArchived)}
-                 FROM events.categories
-                 """;
-
-            var categories = (await connection.QueryAsync<CategoryResponse>(sql, request)).ToList();
-
-            return categories;
+            return categories.Select(c => new CategoryResponse(c.Id, c.Name, c.IsArchived)).ToList();
         }
     }
 }
