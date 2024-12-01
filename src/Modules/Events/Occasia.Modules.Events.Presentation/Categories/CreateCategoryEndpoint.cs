@@ -12,7 +12,7 @@ internal static class CreateCategoryEndpoint
 {
     public static void MapEndpoint(RouteGroupBuilder group)
     {
-        group.MapPost("", async (Request request, ISender sender) =>
+        group.MapPost("", static async (Request request, ISender sender) =>
         {
             var command = new CreateCategory.Command(request.Name);
             ErrorOr<CategoryId> result = await sender.Send(command);

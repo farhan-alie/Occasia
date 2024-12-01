@@ -16,7 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D51848F-C988-4437-BBD4-5C08F06C139C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		compose.yaml = compose.yaml
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
@@ -35,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Occasia.Modules.Events.Infrastructure", "src\Modules\Events\Occasia.Modules.Events.Infrastructure\Occasia.Modules.Events.Infrastructure.csproj", "{B9334D15-7D96-411B-A839-6545933539E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Occasia.Modules.Events.Presentation", "src\Modules\Events\Occasia.Modules.Events.Presentation\Occasia.Modules.Events.Presentation.csproj", "{C16F5F36-196E-44BA-A83C-A6DE48A887FA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A57AC881-7E2D-481B-A612-9C734FFC27B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +75,10 @@ Global
 		{C16F5F36-196E-44BA-A83C-A6DE48A887FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C16F5F36-196E-44BA-A83C-A6DE48A887FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C16F5F36-196E-44BA-A83C-A6DE48A887FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A57AC881-7E2D-481B-A612-9C734FFC27B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A57AC881-7E2D-481B-A612-9C734FFC27B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A57AC881-7E2D-481B-A612-9C734FFC27B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A57AC881-7E2D-481B-A612-9C734FFC27B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

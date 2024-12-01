@@ -9,10 +9,8 @@ public static class CategoryEndpoints
     public static RouteGroupBuilder MapEndpoints(IEndpointRouteBuilder app)
     {
         RouteGroupBuilder group = app.MapGroup(Routes.Categories);
-
-
         CreateCategoryEndpoint.MapEndpoint(group);
-
+        GetCategoriesEndpoint.MapEndpoint(group);
         group.WithTags("Categories API");
         return group;
     }

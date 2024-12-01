@@ -372,3 +372,7 @@ dotnet_diagnostic.S4136.severity = none
 
 # S6605: Collection-specific "Exists" method should be used instead of the "Any" extension
 dotnet_diagnostic.S6605.severity = none
+
+#### Resharper Rules ####
+
+resharper_local_function_can_be_made_static_highlighting = error
